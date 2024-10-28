@@ -8,8 +8,6 @@ import {
     FlatList,
 } from 'react-native';
 import { useState } from 'react';
-import GoalItem from './components/GoalItem';
-
 export default function App() {
     const [enteredGoalTest, setEnterretGoldText] = useState('');
     const [courseGoals, setCourseGoals] = useState([]);
@@ -20,7 +18,7 @@ export default function App() {
     function addGoalHander() {
         setCourseGoals((s) => [
             ...s,
-            { text: enteredGoalTest, id: Math.random().toString() },
+            { text: enteredGoalTest, key: Math.random().toString() },
         ]);
     }
     return (
@@ -37,11 +35,15 @@ export default function App() {
                 <FlatList
                     data={courseGoals}
                     alwaysBounceVertical={false}
+                    keyExtractor={(item, index)}
                     renderItem={(i) => {
-                        return <GoalItem text={i.item.text} />;
-                    }}
-                    keyExtractor={(item, index) => {
-                        return item.id;
+                        return (
+                            <View style={styles.goalItem}>
+                                <Text style={styles.goalText}>
+                                    {i.item.text}
+                                </Text>
+                            </View>
+                        );
                     }}
                 />
             </View>

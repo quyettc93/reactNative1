@@ -8,8 +8,6 @@ import {
     FlatList,
 } from 'react-native';
 import { useState } from 'react';
-import GoalItem from './components/GoalItem';
-
 export default function App() {
     const [enteredGoalTest, setEnterretGoldText] = useState('');
     const [courseGoals, setCourseGoals] = useState([]);
@@ -38,7 +36,9 @@ export default function App() {
                     data={courseGoals}
                     alwaysBounceVertical={false}
                     renderItem={(i) => {
-                        return <GoalItem text={i.item.text} />;
+                        return (
+                            
+                        );
                     }}
                     keyExtractor={(item, index) => {
                         return item.id;
