@@ -7,15 +7,13 @@ export default function App() {
     const [courseGoals, setCourseGoals] = useState([]);
 
     function addGoalHander(enteredGoalTest) {
-        setCourseGoals((c) => [
-            ...c,
+        setCourseGoals((s) => [
+            ...s,
             { text: enteredGoalTest, id: Math.random().toString() },
         ]);
     }
-    function deleteGoalHandler(id) {
-        setCourseGoals((c) => {
-            return c.filter((goal) => goal.id !== id);
-        });
+    function deleteGoalHandler() {
+        console.log('DELETE');
     }
     return (
         <View style={styles.container}>
@@ -25,13 +23,7 @@ export default function App() {
                     data={courseGoals}
                     alwaysBounceVertical={false}
                     renderItem={(i) => {
-                        return (
-                            <GoalItem
-                                text={i.item.text}
-                                id={i.item.id}
-                                onDeleteItem={deleteGoalHandler}
-                            />
-                        );
+                        return <GoalItem text={i.item.text} />;
                     }}
                     keyExtractor={(item, index) => {
                         return item.id;

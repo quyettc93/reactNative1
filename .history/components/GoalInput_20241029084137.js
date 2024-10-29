@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
-
 function GoalInput(props) {
     const [enteredGoalTest, setEnterretGoldText] = useState('');
 

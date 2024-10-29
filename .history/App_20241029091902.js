@@ -14,7 +14,7 @@ export default function App() {
     }
     function deleteGoalHandler(id) {
         setCourseGoals((c) => {
-            return c.filter((goal) => goal.id !== id);
+            return c.filter();
         });
     }
     return (
@@ -28,7 +28,6 @@ export default function App() {
                         return (
                             <GoalItem
                                 text={i.item.text}
-                                id={i.item.id}
                                 onDeleteItem={deleteGoalHandler}
                             />
                         );
