@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column', // mac dinh la column roi
         justifyContent: 'center',
         alignItems: 'center',
+
         padding: 16,
-        backgroundColor: '#311b6b',
     },
     textInput: {
         borderWidth: 1,

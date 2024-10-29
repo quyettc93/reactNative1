@@ -9,9 +9,7 @@ export default function App() {
 
     function startAddGoalHandler() {
         setModalIsVisible(true);
-    }
-    function endAddGoalHandle() {
-        setModalIsVisible(false);
+        console.log(modalIsVisible);
     }
 
     function addGoalHander(enteredGoalTest) {
@@ -19,7 +17,6 @@ export default function App() {
             ...c,
             { text: enteredGoalTest, id: Math.random().toString() },
         ]);
-        endAddGoalHandle();
     }
     function deleteGoalHandler(id) {
         setCourseGoals((c) => {
@@ -30,14 +27,11 @@ export default function App() {
         <View style={styles.container}>
             <Button
                 title="them khoa moi"
-                color="#5e0adc"
+                color="#5e0acc"
                 onPress={startAddGoalHandler}
             />
             {modalIsVisible && (
-                <GoalInput
-                    onAddGoals={addGoalHander}
-                    onCancel={endAddGoalHandle}
-                />
+                <GoalInput onAddGoals={addGoalHander} />
             )}
             <View style={styles.goalsContainer}>
                 <FlatList
@@ -64,6 +58,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'center',
         padding: 50,
         paddingHorizontal: 16,
     },

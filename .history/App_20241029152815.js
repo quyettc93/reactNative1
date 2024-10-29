@@ -30,7 +30,7 @@ export default function App() {
         <View style={styles.container}>
             <Button
                 title="them khoa moi"
-                color="#5e0adc"
+                color="#5e0acc"
                 onPress={startAddGoalHandler}
             />
             {modalIsVisible && (

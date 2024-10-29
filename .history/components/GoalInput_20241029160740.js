@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 16,
-        backgroundColor: '#311b6b',
     },
     textInput: {
         borderWidth: 1,

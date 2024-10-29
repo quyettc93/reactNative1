@@ -19,7 +19,6 @@ export default function App() {
             ...c,
             { text: enteredGoalTest, id: Math.random().toString() },
         ]);
-        endAddGoalHandle();
     }
     function deleteGoalHandler(id) {
         setCourseGoals((c) => {
@@ -30,7 +29,7 @@ export default function App() {
         <View style={styles.container}>
             <Button
                 title="them khoa moi"
-                color="#5e0adc"
+                color="#5e0acc"
                 onPress={startAddGoalHandler}
             />
             {modalIsVisible && (
